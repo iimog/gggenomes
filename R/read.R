@@ -78,13 +78,11 @@ read_paf <- function(file, max_tags=20){
 #' @return list with seqs, genes, and links
 #' @examples
 #' ali <- read_alitv("https://alitvteam.github.io/AliTV/d3/data/chloroplasts.json")
-#'
 #' gggenomes(ali$seqs, ali$genes, links=ali$links) +
 #'   geom_seq() +
 #'   geom_bin_label() +
 #'   geom_gene(aes(fill=class)) +
 #'   geom_link()
-#'
 #' p <- gggenomes(ali$seqs, ali$genes, links=ali$links) +
 #'   geom_seq() +
 #'   geom_bin_label() +
