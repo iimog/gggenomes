@@ -69,8 +69,9 @@ read_paf <- function(file, max_tags=20){
     )
 }
 
-#' read an AliTV .json file
-#' this usually contains sequences, links and (optionally) genes
+#' Read AliTV .json file
+#'
+#' this file contains sequences, links and (optionally) genes
 #'
 #' @importFrom tidyr unnest_wider
 #' @importFrom jsonlite fromJSON
