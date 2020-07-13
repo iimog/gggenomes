@@ -18,6 +18,10 @@ jobs:
 
       - uses: r-lib/actions/setup-pandoc@master
       
+      - name: Install dependencies
+        run: |
+          sudo apt-get install libcurl4-openssl-dev
+      
       - name: Install XQuartz
         if: runner.os == 'macOS'
         run: brew cask install xquartz
@@ -32,8 +36,8 @@ jobs:
         uses: actions/cache@v1
         with:
           path: ${{ env.R_LIBS_USER }}
-          key: macOS-r-4.0-0-${{ hashFiles('.github/depends.Rds') }}
-          restore-keys: macOS-r-4.0-0-
+          key: ubuntu-r-4.0-0-${{ hashFiles('.github/depends.Rds') }}
+          restore-keys: ubuntu-r-4.0-0-
 
       - name: Install dependencies
         run: |
