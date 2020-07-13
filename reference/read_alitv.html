@@ -6,7 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>draw features — geom_feature • gggenomes</title>
+<title>read an AliTV .json file
+this usually contains sequences, links and (optionally) genes — read_alitv • gggenomes</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -48,8 +49,10 @@
   <link href="../extra.css" rel="stylesheet">
   <script src="../extra.js"></script>
 
-<meta property="og:title" content="draw features — geom_feature" />
-<meta property="og:description" content="draw features" />
+<meta property="og:title" content="read an AliTV .json file
+this usually contains sequences, links and (optionally) genes — read_alitv" />
+<meta property="og:description" content="read an AliTV .json file
+this usually contains sequences, links and (optionally) genes" />
 <meta property="og:image" content="/logo.svg" />
 
 
@@ -130,33 +133,23 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>draw features</h1>
-    <small class="dont-index">Source: <a href='https://github.com/thackl/gggenomes/blob/master/R/geom.R'><code>R/geom.R</code></a></small>
-    <div class="hidden name"><code>geom_feature.Rd</code></div>
+    <h1>read an AliTV .json file
+this usually contains sequences, links and (optionally) genes</h1>
+    <small class="dont-index">Source: <a href='https://github.com/thackl/gggenomes/blob/master/R/read.R'><code>R/read.R</code></a></small>
+    <div class="hidden name"><code>read_alitv.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>draw features</p>
+    <p>read an AliTV .json file
+this usually contains sequences, links and (optionally) genes</p>
     </div>
 
-    <pre class="usage"><span class='fu'>geom_feature</span>(
-  mapping = <span class='kw'>NULL</span>,
-  data = <span class='fu'>use_features</span>(),
-  arrow = <span class='kw'>NULL</span>,
-  nudge_by_strand = <span class='kw'>NULL</span>,
-  size = <span class='fl'>3</span>,
-  <span class='kw'>...</span>
-)</pre>
+    <pre class="usage"><span class='fu'>read_alitv</span>(<span class='kw'>file</span>)</pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>data</th>
-      <td><p>feature_layout</p></td>
-    </tr>
-    </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>list</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
