@@ -75,6 +75,7 @@ read_paf <- function(file, max_tags=20){
 #'
 #' @importFrom tidyr unnest_wider
 #' @importFrom jsonlite fromJSON
+#' @param file path to json
 #' @export
 #' @return list with seqs, genes, and links
 #' @examples
