@@ -6,8 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>read an AliTV .json file
-this usually contains sequences, links and (optionally) genes — read_alitv • gggenomes</title>
+<title>Read AliTV .json file — read_alitv • gggenomes</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -49,10 +48,8 @@ this usually contains sequences, links and (optionally) genes — read_alitv •
   <link href="../extra.css" rel="stylesheet">
   <script src="../extra.js"></script>
 
-<meta property="og:title" content="read an AliTV .json file
-this usually contains sequences, links and (optionally) genes — read_alitv" />
-<meta property="og:description" content="read an AliTV .json file
-this usually contains sequences, links and (optionally) genes" />
+<meta property="og:title" content="Read AliTV .json file — read_alitv" />
+<meta property="og:description" content="this file contains sequences, links and (optionally) genes" />
 <meta property="og:image" content="/logo.svg" />
 
 
@@ -85,7 +82,7 @@ this usually contains sequences, links and (optionally) genes" />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">gggenomes</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9001</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
       </span>
     </div>
 
@@ -133,24 +130,41 @@ this usually contains sequences, links and (optionally) genes" />
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>read an AliTV .json file
-this usually contains sequences, links and (optionally) genes</h1>
+    <h1>Read AliTV .json file</h1>
     <small class="dont-index">Source: <a href='https://github.com/thackl/gggenomes/blob/master/R/read.R'><code>R/read.R</code></a></small>
     <div class="hidden name"><code>read_alitv.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>read an AliTV .json file
-this usually contains sequences, links and (optionally) genes</p>
+    <p>this file contains sequences, links and (optionally) genes</p>
     </div>
 
     <pre class="usage"><span class='fu'>read_alitv</span>(<span class='kw'>file</span>)</pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>file</th>
+      <td><p>path to json</p></td>
+    </tr>
+    </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>list</p>
+    <p>list with seqs, genes, and links</p>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'>ali</span> <span class='op'>&lt;-</span> <span class='fu'>read_alitv</span>(<span class='st'>"https://alitvteam.github.io/AliTV/d3/data/chloroplasts.json"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in unnest(., feature): could not find function "unnest"</span></div><div class='input'><span class='fu'>gggenomes</span>(<span class='kw'>ali</span><span class='op'>$</span><span class='kw'>seqs</span>, <span class='kw'>ali</span><span class='op'>$</span><span class='kw'>genes</span>, links=<span class='kw'>ali</span><span class='op'>$</span><span class='kw'>links</span>) <span class='op'>+</span>
+  <span class='fu'>geom_seq</span>() <span class='op'>+</span>
+  <span class='fu'>geom_bin_label</span>() <span class='op'>+</span>
+  <span class='fu'>geom_gene</span>(<span class='fu'>aes</span>(fill=<span class='kw'>class</span>)) <span class='op'>+</span>
+  <span class='fu'>geom_link</span>()</div><div class='output co'>#&gt; <span class='error'>Error in as_tracks(genes, genes_exprs, "seqs"): object 'ali' not found</span></div><div class='input'><span class='kw'>p</span> <span class='op'>&lt;-</span> <span class='fu'>gggenomes</span>(<span class='kw'>ali</span><span class='op'>$</span><span class='kw'>seqs</span>, <span class='kw'>ali</span><span class='op'>$</span><span class='kw'>genes</span>, links=<span class='kw'>ali</span><span class='op'>$</span><span class='kw'>links</span>) <span class='op'>+</span>
+  <span class='fu'>geom_seq</span>() <span class='op'>+</span>
+  <span class='fu'>geom_bin_label</span>() <span class='op'>+</span>
+  <span class='fu'>geom_gene</span>(<span class='fu'>aes</span>(color=<span class='kw'>class</span>)) <span class='op'>+</span>
+  <span class='fu'>geom_link</span>(<span class='fu'>aes</span>(fill=<span class='kw'>identity</span>)) <span class='op'>+</span>
+  <span class='fu'>scale_fill_distiller</span>(palette=<span class='st'>"RdYlGn"</span>, direction = <span class='fl'>1</span>)</div><div class='output co'>#&gt; <span class='error'>Error in as_tracks(genes, genes_exprs, "seqs"): object 'ali' not found</span></div><div class='input'><span class='kw'>p</span> <span class='op'>%&gt;%</span> <span class='fu'>flip_seq</span>(<span class='st'>"Same_gi"</span>) <span class='op'>%&gt;%</span> <span class='fu'>pick</span>(<span class='fl'>1</span>,<span class='fl'>3</span>,<span class='fl'>2</span>,<span class='fl'>4</span>,<span class='fl'>5</span>,<span class='fl'>6</span>,<span class='fl'>7</span>,<span class='fl'>8</span>)</div><div class='output co'>#&gt; <span class='error'>Error in eval(lhs, parent, parent): object 'p' not found</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
