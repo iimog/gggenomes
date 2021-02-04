@@ -12,12 +12,17 @@ gggenomes_global$file_formats <- map(list(
     fasta = qc(fa, fas, fasta, ffn, fna, faa),
     blast = qc(m8, o6, o7),
     paf = qc(paf),
+    alitv = qc(json),
     ambigious = qc(txt, tsv, csv)
   ),
   seqs = list(
     fai = qc(fai),
     seq_len = qc(fa, fas, fasta, ffn, fna, faa, gff, gbk),
+    alitv = qc(json),
     ambigious = qc(txt, tsv, csv)
+  ),
+  links = list(
+    alitv = qc(json)
   ),
   zips = list(
     bz2 = qc(bz, bz2),
