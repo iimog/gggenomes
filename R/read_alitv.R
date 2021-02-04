@@ -32,7 +32,7 @@ read_alitv <- function(file){
     mutate(class = names(feature)) %>%
     filter(class != "link") %>%
     unnest(feature) %>%
-    rename(seq_id=karyo)
+    select(seq_id=karyo, start, end, name, class)
   links <- tibble(links=ali$data$links) %>% unnest(links) %>% unnest(links) %>% unnest_wider(links)
   link_pos <- tibble(link=ali$data$features$link) %>% mutate(id=names(link)) %>% unnest_wider(link)
   links <- links %>%
